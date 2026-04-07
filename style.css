@@ -14,7 +14,6 @@
     background-color: black;
     padding: 2em;
     color: white;
-    display: none;
     
 }
 
@@ -27,7 +26,7 @@
       color: white;
       font-size: 40px;
 }
-button{
+.btn button{
     cursor: pointer;
     border-radius: 50%;
     border: none;
@@ -40,7 +39,7 @@ button{
      transition: transform 0.1s ease-in-out;
 }
 
-button:active{
+.btn button:active{
   transform: scale(1.2) ;
 }
 
@@ -63,9 +62,9 @@ button:active{
 
 .card{
     margin: 50px auto 0;
-    width: 300px;
+    width: 400px;
     background: linear-gradient(135deg ,#00feba, #5b548a);
-    padding: 2em;
+    padding: 4em 2em;
     border-radius: 20px;
     text-align: center;
     color: white;
@@ -80,23 +79,133 @@ button:active{
 
 
 .search input{
+    width: 200px;
     border: none;
     outline: none;
     background: #ebfffc;
     border-radius: 20px;
     padding: 10px 50px;
     margin-right: 0;
+    font-size: 15px;
     color:#5b548a;
 }
 #weatherbtn img{
-width: 70%;
+width: 15px;
 }
 
 #weatherbtn{
-    background: #ebfffc;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+     width: 100%;
+     padding: 1.7rem;
+     color: white;
+     font-weight: bold;
+     font-size:25px;
+     margin-bottom: 1em;
+     transition: transform 0.1s ease-in-out;
+    background:#ebfffc;
     width: 10%;
     padding: 0.1rem 0.3rem;
     align-items: center;
     border-radius: 50%;
     margin-bottom: 0;
+}
+
+.about{
+    display: flex;
+    margin-top: 3rem;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.col{
+    display: flex;
+    align-items: center;
+    text-align: left;
+    
+}
+
+.col img{
+    width:40px;
+    margin-right: 10px;
+}
+
+#weathericon{
+    position: absolute;
+    width: 180px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#weathericon2{
+    width: 180px;
+    margin-top: 10px;
+    cursor: pointer;
+   visibility: hidden;
+}
+
+.weather h1{
+   font-size: 50px;
+   font-weight: 500;
+}
+
+.weather h2{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.humidity, .wind{
+    margin-top: -5px;
+}
+
+
+#nameInput{
+    margin: 10px 10px;
+   width: 30%;
+   color: white;
+   padding: 10px;
+}
+
+#toggle{
+    cursor: pointer;
+}
+
+.dark{
+    background-color: black;
+    color: white;
+}
+
+.dark input{
+    background-color: black;
+}
+.dark #weatherbtn {
+    background-color: black;
+}
+#savebtn{
+    color: green;
+}
+
+#div1, #div2 {
+  float: left;
+  width: 100px;
+  height: 35px;
+  margin: 10px;
+  padding:  10px ;
+  color:#73AD21 #EE872A;
+  border: 1px solid black;
+}
+
+#nameInput{
+    color: black;
+}
+
+.buttons button{
+    margin: 10px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    background-color: yellow;
+
 }
