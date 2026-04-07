@@ -15,7 +15,7 @@ function deletelast(){
 function press(value) {
     display.value += value;
     console.log("Pressed:", value)
-}
+};
 
 function calculate() {
     try {
@@ -28,7 +28,11 @@ function calculate() {
         display.value = "Error";
         console.log("Calculation Error")
     }
+<<<<<<< HEAD
 }
+=======
+};
+>>>>>>> master
 
 
 window.addEventListener("DOMContentLoaded" , function(){
@@ -70,7 +74,11 @@ const storage = document.getElementById("results");
 
 if(typeof(Storage) !==undefined){
 //store 
+<<<<<<< HEAD
     loca Storage.setItem("key", "Im using local storage");
+=======
+    localStorage.setItem("key", "Im using localstorage");
+>>>>>>> master
     localStorage.setItem("key2","red" );
 //retrieve
     storage.innerHTML = localStorage.getItem("key");
