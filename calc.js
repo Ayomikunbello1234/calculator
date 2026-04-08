@@ -28,13 +28,7 @@ function calculate() {
         display.value = "Error";
         console.log("Calculation Error")
     }
-<<<<<<< HEAD
 }
-=======
-};
->>>>>>> master
-
-
 window.addEventListener("DOMContentLoaded" , function(){
   let storaged = localStorage.getItem("storage");
   lastresult.innerHTML = "THE LAST CALCULATION WAS  :"+ "  " + storaged;
@@ -74,11 +68,8 @@ const storage = document.getElementById("results");
 
 if(typeof(Storage) !==undefined){
 //store 
-<<<<<<< HEAD
-    loca Storage.setItem("key", "Im using local storage");
-=======
+    localStorage.setItem("key", "Im using local storage");
     localStorage.setItem("key", "Im using localstorage");
->>>>>>> master
     localStorage.setItem("key2","red" );
 //retrieve
     storage.innerHTML = localStorage.getItem("key");
