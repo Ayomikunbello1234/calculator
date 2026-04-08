@@ -213,5 +213,5 @@ load.addEventListener("click", function(){
     if (saved !== null){
         count = Number(saved);
     }
-    num.innerHTML = count + "(this is the last number";
+    num.innerHTML = count + "(this is the last number saved)";
 });
