@@ -66,8 +66,8 @@ function myfunction() {
 //This code below shows how to check if browser supports storage
 const storage = document.getElementById("results");
 
-if(typeof(Storage) !==undefined){
-//store 
+if(typeof(Storage) !== "undefined"){
+//store  
     localStorage.setItem("key", "Im using local storage");
     localStorage.setItem("key", "Im using localstorage");
     localStorage.setItem("key2","red" );
