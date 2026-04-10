@@ -92,7 +92,7 @@ savebtn.addEventListener("click", function() {
 });
 
 let savedname = localStorage.getItem("username");
-displays.innerText = "Welcome" + " Mrs" + "  " + savedname ;
+displays.innerText = "Welcome is this " + " Mrs" + "  " + savedname + "  " + "? " ;
 
 
 
@@ -213,5 +213,5 @@ load.addEventListener("click", function(){
     if (saved !== null){
         count = Number(saved);
     }
-    Updatecount();
+    num.innerHTML = count + "(this is the last number saved)";
 });
