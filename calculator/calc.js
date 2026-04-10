@@ -29,6 +29,24 @@ function calculate() {
         console.log("Calculation Error")
     }
 }
+
+document.addEventListener("keydown", function(event){
+    if (event.key === "Enter"){
+        calculate();
+    }
+
+   
+});
+
+document.addEventListener("keydown", function(event){
+     if (event.key === "Backspace"){
+        deletelast();
+    }
+});
+
+
+
+
 window.addEventListener("DOMContentLoaded" , function(){
   let storaged = localStorage.getItem("storage");
   lastresult.innerHTML = "THE LAST CALCULATION WAS  :"+ "  " + storaged;
@@ -64,52 +82,72 @@ function myfunction() {
         alert(text = 'okay')
      }}
 //This code below shows how to check if browser supports storage
-const storage = document.getElementById("results");
+//const storage = document.getElementById("results");
 
-if(typeof(Storage) !== "undefined"){
+//if(typeof(Storage) !== "undefined"){
 //store  
-    localStorage.setItem("key", "Im using local storage");
-    localStorage.setItem("key", "Im using localstorage");
-    localStorage.setItem("key2","red" );
+   // localStorage.setItem("key", "Im using local storage");
+    //localStorage.setItem("key", "Im using localstorage");
+    //localStorage.setItem("key2","red" );
 //retrieve
-    storage.innerHTML = localStorage.getItem("key");
-    storage.style.backgroundColor = localStorage.getItem("key2");
-}
-else{
-    storage.innerHTML ="sorry it doesnt support"
-}
+   // storage.innerHTML = localStorage.getItem("key");
+   // storage.style.backgroundColor = localStorage.getItem("key2");
+//}
+//else{
+   // storage.innerHTML ="sorry it doesnt support"
+//}
+
+
+
+
 
 //FOR SAVING INPUT VALUE AND DISPLAYING IT
 let nameInput = document.getElementById("nameInput");
 let savebtn = document.getElementById("savebtn");
 let displays = document.getElementById("displays");
 
+let savedname = localStorage.getItem("username");
+if(savedname) {
+displays.innerText = "Welcome back ," +  "  " + savedname + "!";
+}
+else{
+    displays.innerText = "";
+}
+
 savebtn.addEventListener("click", function() {
     let name = nameInput.value;
-    savebtn.style.color = "yellow"
+    savebtn.style.color = "yellow";
     localStorage.setItem("username", name);
-  displays.innerText= "Welcome" + " Mrs" + "  " + name;
+  displays.innerText= "Welcome" +  "  " + name;
 });
 
-let savedname = localStorage.getItem("username");
-displays.innerText = "Welcome is this " + " Mrs" + "  " + savedname + "  " + "? " ;
 
 
 
-
-
-//DARK MODE 
+//DARK MDE 
 let button = document.getElementById("toggle");
+let darkmode = document.getElementById("darkmode");
+let icon =  document.getElementById("icon");
+let title = document.getElementById("hoverswitch");
 
 button.addEventListener("click", function () {
-    document.body.classList.toggle("dark");
+    darkmode.classList.toggle("dark");
 
 
-    if(document.body.classList.contains("dark")){
-        localStorage.setItem("theme", "dark")
+    if(darkmode.classList.contains("dark")){
+        localStorage.setItem("theme", "dark");
+        icon.src = "lightmode.png";
+        button.style.backgroundColor = "black";
+        nameInput.style.borderColor ="white"
+          title.innerText = "Switch to light mode";
+        
     }
     else{
-      localStorage.setItem("theme", "light")
+      localStorage.setItem("theme", "light");
+      icon.src = "darkmode.png";
+      title.innerText = "Switch to dark mode";
+      button.style.backgroundColor = "white";
+      nameInput.style.borderColor = "black";
     }
 
 });
@@ -119,10 +157,20 @@ button.addEventListener("click", function () {
 let savedTheme = localStorage.getItem("theme");
 
 if (savedTheme === "dark") {
-    document.body.classList.add("dark");
+    icon.src = "lightmode.png";
+    title.innerText = "Switch to light mode";
+    darkmode.classList.add("dark");
+   button.style.backgroundColor = "black";
+   nameInput.style.borderColor ="white"
 }
 
-
+else{
+    icon.src= "darkmode.png";
+    title.innerText= "Switch to dark mode";
+     button.style.backgroundColor ="white";
+darkmode.classList.remove("dark");
+ nameInput.style.borderColor = "black";
+}
 
 //COUNTER
 
@@ -213,5 +261,130 @@ load.addEventListener("click", function(){
     if (saved !== null){
         count = Number(saved);
     }
-    num.innerHTML = count + "(this is the last number saved)";
+    Updatecount();
 });
+
+
+
+//TO DO LIST
+
+let tasks = [];
+let taskinput = document.getElementById("task");
+
+
+function addTasks(){
+ let text = taskinput.value;
+
+ if (text === ""){
+    return;
+ }
+
+ tasks.push(text); //this adds the value that was in the input through "text" into the "tasks" array that was created 
+taskinput.value = "";
+saveTask();
+
+}
+
+
+function saveTask(){
+    localStorage.setItem("tasks", JSON.stringify(tasks))
+}
+
+function clearall(){
+tasks = {};
+saveTask();
+
+}
+
+function displaytask(){
+
+}
+
+
+
+//MODAL POPUP
+const closebtn = document.getElementById("closebtn");
+const openbtn = document.getElementById("openbtn");
+const modal = document.getElementById("modal");
+
+
+function openmodal(){
+    modal.classList.add("show");
+}
+ 
+function closemodal(){
+    modal.classList.remove("show");
+}
+
+closebtn.addEventListener("click", closemodal);
+openbtn.addEventListener("click", openmodal);
+
+
+modal.addEventListener("click", function(event){
+    if(event.target === modal){
+        closemodal();
+    }
+});
+
+
+document.addEventListener("keydown", function(event){
+    if (event.key === "Escape"){
+        closemodal();
+    }
+});
+
+
+//FOR FORM VALIDATION
+
+const form = document.getElementById("signupform");
+const nameinput = document.getElementById("nameinput");
+const emailInput = document.getElementById("emailinput");
+const passwordInput = document.getElementById("passwordinput");
+const confirmInput = document.getElementById("confirmpassword");
+const  nameError = document.getElementById("name-error");
+const emailError = document.getElementById("email-error");
+const pasworderror = document.getElementById("password-error");
+const confirmError = document.getElementById("confirm-error");
+const Result = document.getElementById("result");
+
+
+//function to show the error
+function showError(variable , message){ // this function declared two objects where when calling the function ,a value can be put in the objects
+    variable.innerHTML = message;
+}
+ 
+//function to clear error
+function clearError(variable){
+   variable.innerHTML = "";
+}
+
+//function to validate name
+function NameVal(){
+    let value = nameinput.value.trim();
+    if (value.length <= 2){
+        showError(nameError, "The character shouldnt be less than or equal to 2")
+
+        return false;
+    } 
+}
+
+//function to validate email
+function emaiLVal(){
+    let value = emailInput.value.trim();
+     
+}
+
+
+//function to validate password
+function passwordVal(){
+    let value = passwordInput.value;
+    if (value.length < 8){
+        showError(passwordError , "The password must be at least 8");
+    }
+    return false;
+}
+
+function confirmVal(){
+  let pass = passwordInput.value;
+
+}
