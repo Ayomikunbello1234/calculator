@@ -152,6 +152,7 @@ button.addEventListener("click", function () {
       title.innerText = "Switch to dark mode";
       button.style.backgroundColor = "white";
       nameInput.style.borderColor = "black";
+        nameInput.style.color = "black";
     }
 
 });
@@ -176,6 +177,7 @@ else{
      button.style.backgroundColor ="white";
 darkmode.classList.remove("dark");
  nameInput.style.borderColor = "black";
+    nameInput.style.color = "black";
 }
 
 //COUNTER
