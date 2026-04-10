@@ -7,12 +7,34 @@
     <link rel="icon" href="favicon.ico"  type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<script src="calc.js"></script>
+<body class="dark" id="darkmode">
+
+
+<!--FOR NAME LOCAL STORAGE -->
+<div class="darkmode2" style="position: relative; display: inline-block; float: right; margin-right:30px; margin-top: -20px;">
+<button id="toggle"><img id="icon" src="darkmode.png"></button>
+
+<span id="hoverswitch">Switch to light mode </span>
+<br>
+<br><br> <br>
+</div>
+
+<div class="namestorage">
+<h3 id="displays"></h3>
+<label for="nameInput">
+<input type="text" name="nameInput" id="nameInput" placeholder="Enter your name">
+</label>
+<button id="savebtn">Save</button>
+ <BR></BR>
+</div>
+
+
 
 <h2 id="results"></h2>
 
-<div class="calculator">
+<h2 id="h2">This is a calculator , which displays the previously calculated answer for the user to see</h2>
+
+<div id="calculator">
  <input type="text" readonly id="display"> 
 <div class="btn">
   <button class="grey" value="del" onclick="deletelast()">DEL</button>
@@ -42,13 +64,13 @@
   <button class="black" value="," onclick="press(',')">,</button>
   <button class="black" value="0" onclick="press('0')">0</button>
   <button class="black" value="." onclick="press('.')">.</button>
-  <button class="yellow" value="=" onclick="calculate()">=</button>
+  <button class="yellow" value="=" id="calc" onclick="calculate()">=</button>
 </div>
 
 <p id="lastresult"></p>
 </div>
 
-
+<!--
 <div class="card">
 
    <div class="search">
@@ -82,20 +104,12 @@
 </div>
 </div>
 
-<!--FOR NAME LOCAL STORAGE -->
-<label for="nameInput">
-<input type="text" name="nameInput" id="nameInput" placeholder="Enter your name">
-</label>
-<button id="savebtn">Save</button>
-<h3 id="displays"></h3>
- <BR></BR>
+-->
+
 
 <!-- BUTTON FOR DARK MODE, LIGHT MODE TOGGLE-->
-<button id="toggle">click me</button>
-<br>
-<br><br> <br>
-
-<!--COUNTER SECTION OF MY PAGE-->
+ 
+<!--COUNTER SECTION OF MY PAGE
 <div style="margin: 0 auto; padding: 20                                                                               px;">
 <button style="cursor: pointer;" id="clickcounter">Click for counter increase</button>
 <br><br>
@@ -108,7 +122,7 @@
 
 
 
-<!--DRAGGING AND DROPPING ITEMS-->
+<!/--DRAGGING AND DROPPING ITEMS--/>
 
 <div id="div1" style="border: 2px black solid" ondragover="dragoverevent(event)" ondrop="dropevent(event)">
   <img id="dragItem" style="cursor: grab;" src="menu-item-5.png" alt="food" width="100" height="100" draggable="true" ondragstart="dragstartevent(event)">
@@ -118,7 +132,7 @@
 <div id="div2" ondragover="dragoverevent(event)" ondrop="dropevent(event)"></div>
 
 
-<!--saving and reseting-->
+<!/--saving and reseting--/>
 <br>
 <br>
 <br>
@@ -134,5 +148,63 @@
 </div>
 
 
-</body class="dark">
+<!/--TO DO LIST-->
+<!--
+<input type="text" id="task">
+<button onclick="addTask()"></button>
+<ul id="list"></ul>
+<button onclick="clearAll()"></button>
+
+--/>
+
+
+<!/--MODAL POPUP , CLOSING A DIV ELEMENT --/>
+
+<button id="openbtn">Open Modal</button>
+<div class="modaloverlay" id="modal">
+  <div class="modalbox">
+    <h3>Hello</h3>
+    <h4>This is a modal popup</h4>
+    <button id="closebtn" class="modalclose">Close the popup</button>
+  </div>
+
+</div>
+
+<!-/-FORM VALIDATION--/>
+
+<form action="" id="signupform">
+ <h3 style="margin-bottom: 50px;">Form Validation</h3>
+  <div class="field">
+    <label>Name :</label>
+     <input type="text" id="nameinput" placeholder="Your Name">
+  <p id="name-error" class="error"></p>
+    
+  </div>
+  <br>
+  <div class="field">
+    <label>Email:</label>
+    <input type="text" id="emailinput" placeholder="e.g : johndoe@example.com">
+    <p id="email-error" class="error"></p>
+  </div>
+   <br>
+  <div class="field">
+    <label>Password:</label>
+    <input type="text" id="passwordinput" placeholder="MIn 8 characters">
+    <p id="password-error" class="error"></p>
+  </div>
+    <br>
+  <div class="field">
+    <label for="">Confirm Password:</label>
+    <input type="text" id="confirmpassword" placeholder="repeat password">
+    <p id="confirm-error" class="error"></p>
+</div>
+
+
+<button type="submit">Submit Form</button>
+</form>
+
+<p id="result"></p>-->
+
+<script src="calc.js"></script>
+</body >
 </html>
