@@ -140,6 +140,7 @@ button.addEventListener("click", function () {
         button.style.backgroundColor = "black";
         nameInput.style.borderColor ="white"
           title.innerText = "Switch to light mode";
+          nameInput.style.color = "white";
         
     }
     else{
@@ -162,6 +163,7 @@ if (savedTheme === "dark") {
     darkmode.classList.add("dark");
    button.style.backgroundColor = "black";
    nameInput.style.borderColor ="white"
+   nameInput.style.color = "white";
 }
 
 else{
