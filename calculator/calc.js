@@ -140,11 +140,10 @@ button.addEventListener("click", function () {
         button.style.backgroundColor = "black";
         nameInput.style.borderColor ="white"
           title.innerText = "Switch to light mode";
-<<<<<<< HEAD
           nameInput.style.color = "white";
-=======
-        nameInput.style.color = "white";
->>>>>>> 7aaeefc756343c3f26821cd7682bae34f87ca13e
+
+        
+
         
     }
     else{
@@ -166,13 +165,9 @@ if (savedTheme === "dark") {
     title.innerText = "Switch to light mode";
     darkmode.classList.add("dark");
    button.style.backgroundColor = "black";
-<<<<<<< HEAD
    nameInput.style.borderColor ="white"
    nameInput.style.color = "white";
-=======
-   nameInput.style.borderColor ="white";
-    nameInput.style.color = "white";
->>>>>>> 7aaeefc756343c3f26821cd7682bae34f87ca13e
+
 }
 
 else{
