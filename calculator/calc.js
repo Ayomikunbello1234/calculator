@@ -1,3 +1,5 @@
+//THE PUSHED REPO SOURCE IS FROM LINE 3 TO LINE 160
+
 const display = document.getElementById("display");
 const oya = document.getElementById("okk");
 const lastresult = document.getElementById("lastresult");
@@ -44,17 +46,11 @@ document.addEventListener("keydown", function(event){
     }
 });
 
-
-
-
 window.addEventListener("DOMContentLoaded" , function(){
   let storaged = localStorage.getItem("storage");
   lastresult.innerHTML = "THE LAST CALCULATION WAS  :"+ "  " + storaged;
   
 });
-
-
-
 
 
 function showfirst() {
@@ -81,23 +77,6 @@ function myfunction() {
      else {
         alert(text = 'okay')
      }}
-//This code below shows how to check if browser supports storage
-//const storage = document.getElementById("results");
-
-//if(typeof(Storage) !== "undefined"){
-//store  
-   // localStorage.setItem("key", "Im using local storage");
-    //localStorage.setItem("key", "Im using localstorage");
-    //localStorage.setItem("key2","red" );
-//retrieve
-   // storage.innerHTML = localStorage.getItem("key");
-   // storage.style.backgroundColor = localStorage.getItem("key2");
-//}
-//else{
-   // storage.innerHTML ="sorry it doesnt support"
-//}
-
-
 
 
 
@@ -124,6 +103,10 @@ savebtn.addEventListener("click", function() {
 
 
 
+
+
+
+
 //DARK MDE 
 let button = document.getElementById("toggle");
 let darkmode = document.getElementById("darkmode");
@@ -141,10 +124,6 @@ button.addEventListener("click", function () {
         nameInput.style.borderColor ="white"
           title.innerText = "Switch to light mode";
           nameInput.style.color = "white";
-
-        
-
-        
     }
     else{
       localStorage.setItem("theme", "light");
@@ -179,6 +158,38 @@ darkmode.classList.remove("dark");
  nameInput.style.borderColor = "black";
     nameInput.style.color = "black";
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//This code below shows how to check if browser supports storage
+//const storage = document.getElementById("results");
+
+//if(typeof(Storage) !== "undefined"){
+//store  
+   // localStorage.setItem("key", "Im using local storage");
+    //localStorage.setItem("key", "Im using localstorage");
+    //localStorage.setItem("key2","red" );
+//retrieve
+   // storage.innerHTML = localStorage.getItem("key");
+   // storage.style.backgroundColor = localStorage.getItem("key2");
+//}
+//else{
+   // storage.innerHTML ="sorry it doesnt support"
+//}
+
+
 
 //COUNTER
 
@@ -377,7 +388,7 @@ function NameVal(){
 }
 
 //function to validate email
-function emaiLVal(){
+function emaiLVal(){ 
     let value = emailInput.value.trim();
      
 }
